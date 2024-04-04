@@ -3,8 +3,9 @@ version: "3.8"
 services:
   mongo1:
     image: mongo:latest
+    restart: always
     container_name: MongoDB_Container
-    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    command: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0"]
     ports:
       - "27017:27017"
     volumes:
