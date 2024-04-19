@@ -10,7 +10,7 @@ services:
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo1
 
   mongo2:
-    image: mongo:5
+    image: mongo:latest
     restart: always
     networks:
       - mongoCluster
@@ -19,7 +19,7 @@ services:
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo2
 
   mongo3:
-    image: mongo:5
+    image: mongo:latest
     restart: always
     networks:
       - mongoCluster
