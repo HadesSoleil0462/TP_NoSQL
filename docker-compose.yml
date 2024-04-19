@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   mongo1:
+    container_name: mongo1
     image: mongo:latest
     restart: always
     networks:
@@ -8,8 +9,11 @@ services:
     ports:
       - 27017:27017
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo1
+    volumes: 
+      - ./mongo1:/data/db
 
   mongo2:
+    container_name: mongo2
     image: mongo:latest
     restart: always
     networks:
@@ -17,8 +21,11 @@ services:
     ports:
       - 27018:27017
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo2
+    volumes: 
+      - ./mongo2:/data/db
 
   mongo3:
+    container_name: mongo3
     image: mongo:latest
     restart: always
     networks:
@@ -26,6 +33,8 @@ services:
     ports:
       - 27019:27017
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo3
+    volumes: 
+      - ./mongo3:/data/db
 
 networks:
   mongoCluster:
