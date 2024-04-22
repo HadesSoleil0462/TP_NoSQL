@@ -3,7 +3,7 @@
 
 ### Prérequis
 
-- Docker installé 
+- Docker et docker-compose installés 
 - npm installé 
 - Accès à internet
 
@@ -36,5 +36,15 @@ npm run genFakeData
 ## - Étape 3: Manipulations via la CLI MongoDB
 
 ```bash 
+docker cp users.json mongo1:/users.json
+docker exec -it mongo1 mongoimport --db usersDB --collection users --file /users.json --jsonArray # Insert operation
 docker exec -it mongo1 mongosh
+```
+
+```bash 
+use usersDB
+db.users.insertOne({ "name": "Tom Fregonese", "email": "tom@fregonese.com", "age": 20, "createdAt": "2024-04-20T00:00:00" }) //Create operation 
+db.users.find({ age: { $gt: 30 } }).pretty() //Read operation
+db.users.updateMany({}, { $inc: { age: 5 } }) //Update operation
+db.users.deleteOne({ name: "Tom Fregonese" }) //Delete operation
 ```

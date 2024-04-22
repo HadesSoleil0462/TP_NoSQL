@@ -10,7 +10,7 @@ services:
       - 27017:27017
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo1
     volumes: 
-      - ./mongo1:/data/db
+      - ./dbSaves/mongo1:/data/db
 
   mongo2:
     container_name: mongo2
@@ -22,7 +22,7 @@ services:
       - 27018:27017
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo2
     volumes: 
-      - ./mongo2:/data/db
+      - ./dbSaves/mongo2:/data/db
 
   mongo3:
     container_name: mongo3
@@ -34,7 +34,7 @@ services:
       - 27019:27017
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo3
     volumes: 
-      - ./mongo3:/data/db
+      - ./dbSaves/mongo3:/data/db
 
 networks:
   mongoCluster:
