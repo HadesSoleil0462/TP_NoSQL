@@ -48,3 +48,11 @@ db.users.find({ age: { $gt: 30 } }).pretty() //Read operation
 db.users.updateMany({}, { $inc: { age: 5 } }) //Update operation
 db.users.deleteOne({ name: "Tom Fregonese" }) //Delete operation
 ```
+
+
+
+![Image Description](./ressources/Screenshot_1.png)
+
+![Image Description](./ressources/Screenshot_2.png)
+
+![Image Description](./ressources/Screenshot_3.png)
