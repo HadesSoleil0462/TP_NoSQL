@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "genFakeData": "node Faker.js",
-    "CrudAutomation": ""
+    "genFakeData": "node faker.js",
+    "autoCrud": "node crudAutomation.js"
   },
   "dependencies": {
     "faker": "^5.5.3",
