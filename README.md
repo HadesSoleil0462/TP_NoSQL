@@ -73,5 +73,5 @@ db.users.deleteOne({ name: "Tom Fregonese" }) //Delete operation
 Pour automatiser les manipulations de données, il faut exécuter les commandes suivantes :
 
 ```bash
-npm run CrudAutomation
+npm run autoCrud # Not working yet
 ```
