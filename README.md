@@ -33,7 +33,8 @@ docker exec -it mongo1 mongosh --eval "rs.initiate({
 
 Pour générer des fausses données, il faut exécuter la commande suivante :
 
-```bash 
+```bash
+npm install
 npm run genFakeData
 ```
 <br>
