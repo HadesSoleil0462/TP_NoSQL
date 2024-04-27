@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "faker": "^5.5.3",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "mongodb": "^6.5.0"
   }
 }
