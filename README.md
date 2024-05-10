@@ -74,5 +74,9 @@ db.users.deleteOne({ name: "Tom Fregonese" }) //Delete operation
 Pour automatiser les manipulations de données, il faut exécuter les commandes suivantes :
 
 ```bash
-npm run autoCrud # Not working yet
+npm run autoCrud # Not working
+```
+
+```bash
+docker exec -it nodejs bash -c "npm install mongodb && node /app/your-script.js" # Not working neither
 ```

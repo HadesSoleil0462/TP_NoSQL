@@ -45,6 +45,7 @@ services:
       - 3000:3000
     volumes:
     - ./scripts:/app
+    command: ["tail", "-f", "/dev/null"]
 
 networks:
   mongoCluster:
