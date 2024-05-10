@@ -35,6 +35,16 @@ services:
     command: mongod --replSet myReplicaSet --bind_ip localhost,mongo3
     volumes: 
       - ./dbSaves/mongo3:/data/db
+  
+  nodejs:
+    container_name: nodejs
+    image: node:latest
+    networks:
+      - mongoCluster
+    ports:
+      - 3000:3000
+    volumes:
+    - ./scripts:/app
 
 networks:
   mongoCluster:
